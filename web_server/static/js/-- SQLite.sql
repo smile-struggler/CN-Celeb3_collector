@@ -1,0 +1,6 @@
+-- SQLite
+SELECT *
+FROM data
+WHERE PROCESSRES is NULL
+    OR PROCESSRES = null
+    OR PROCESSRES = ""

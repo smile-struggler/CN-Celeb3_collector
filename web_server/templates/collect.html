@@ -1,0 +1,92 @@
+<!--
+ * @Author: sectum1919 1048186774@qq.com
+ * @Date: 2022-08-08 12:56:45
+ * @LastEditors: sectum1919 1048186774@qq.com
+ * @LastEditTime: 2022-08-16 21:26:51
+ * @Description: 
+ * 
+-->
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>采集数据</title>
+    <link href="static/other/filepond.css" rel="stylesheet">
+    <link href="static/css/common_style.css" rel="stylesheet">
+    <link href="static/other/filepond-plugin-image-preview.min.css"
+        rel="stylesheet">
+</head>
+
+<body onload="init_html()">
+    <div style="align-items:center;display:flex;flex-direction:column">
+        <div style="align-items:left;width:1000px">
+            <p> 输入 Speaker Name : <input type="text" name="speaker" id="speaker">
+                <br>输入 BVid 或者 URL : <input type="text" name="BVid" id="bvid">
+            </p>
+            <div style="display:flex">
+                <div style="flex: 1 0 auto">
+                    <h4>选择场景分类（多选，至少选择一项）:</h4>
+                    <div style="flex: 0 0 auto;display:flex;flex-direction:row">
+                        <div id="genre_checkbox">
+                        </div>
+                        <div id="genre_desc">
+                        </div>
+                    </div>
+                </div>
+                <div style="flex: 0 0 600px;">
+                    <h4>将人脸截图粘贴到这里：</h4>
+                    <input id="mypond" type="file" class="filepond" name="filepond" accept="image/png" />
+                </div>
+            </div>
+            <p></p>
+            <div>
+                <button id="load" style="height:40px;width:100px" onclick="load_video()">加载视频</button>
+                <p id='mention' style="display:inline;"></p>
+            </div>
+            <div style="display:flex;flex-direction:row">
+                <div style="flex: 1 0 auto;">
+                    <iframe id="spkj" src="" scrolling="no" border="0" frameborder="no" framespacing="0"
+                        allowfullscreen="true" width=800px> </iframe>
+                </div>
+                <div style="flex: 0 0 auto;"> <input style="height:60px;width:150px" type="button" onclick="choose()"
+                        value="Choose second" id="ft">
+                    <p id="chooseNum" style="font-size:20px;font-weight: bold;">已选0/10秒</p>
+                    <p id="status" style="font-size:17px">状态：</p>
+                    <p></p>
+                    <table width="300" border="1" cellspacing="0" id="tab1">
+                        <!-- <table width="300" border="1" cellspacing="0" id="tab1" align="center"> -->
+                        <caption>目标说话人完整语音时间表</caption>
+                        <tr>
+                            <td>被选秒</td>
+                            <td>操作</td>
+                        </tr>
+                    </table>
+                </div>
+                <script type="text/javascript">
+                    document.getElementById("spkj").style.height = document.getElementById("spkj").scrollWidth * 0.76 + "px";
+                </script>
+            </div>
+            <div style="clear: both"></div>
+            <div style="margin-top: 2%;">
+                <button id="add" style="height:50px;width:200px;background-color:greenyellow"
+                    onclick="add_video()">上传本条数据</button>
+                <button onclick="window.location.href='/'" style="flex:0 0 auto"> 返回主页 </button>
+                <h3 id="userinfo_collect"></h3>
+            </div>
+        </div>
+    </div>
+    <script
+        src="static/other/filepond-plugin-file-validate-type.js"></script>
+    <script src="static/other/filepond-plugin-image-preview.js"></script>
+    <script src="static/other/filepond-plugin-file-encode.js"></script>
+    <script src="static/other/filepond-plugin-file-rename.js"></script>
+    <script src="static/other/filepond.js"></script>
+    <script src="static/other/jquery.min.js"></script>
+    <script src="static/js/collect.js"></script>
+    <script type="text/javascript">
+        // 把username存起来
+        username = "{{username}}"
+    </script>
+    <script type="text/javascript"> bv = "{{bv}}" </script>
+</body>

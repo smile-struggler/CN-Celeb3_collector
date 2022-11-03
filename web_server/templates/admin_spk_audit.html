@@ -1,0 +1,26 @@
+{% extends 'admin/master.html' %} {% block body %} <div style="display:flex; flex-direction:column; align-items:center">
+    <style>
+        .bold {
+            font-weight: bold;
+        }
+    </style>
+    <h1> </h1>
+    <button style="flex: 0 0 auto; width:100px;height:50px;" onclick="get_result()"> 获取审核情况 </button>
+    <p></p>
+    <p></p>
+    <p id="new" style="font-size:17px" class="bold" >新增完成目标说话人数量：</p>
+    <p id="total" style="font-size:17px;" class="bold">所有完成目标说话人数量：</p>
+    <div style="flex: 0 0 auto;"> 
+    
+    <table width="450" border="1" cellspacing="0" id="spk_audit" style="font-size:18px">
+        <!-- <table width="300" border="1" cellspacing="0" id="tab1" align="center"> -->
+        <caption style="font-size:20px">说话人审核情况表</caption>
+        <tr>
+            <td>采集人</td>
+            <td>目标说话人</td>
+            <td>审核率</td>
+        </tr>
+    </table>
+</div>
+    <!-- <button style="flex: 0 0 auto; width:200px;height:50px;" onclick="clear_processres()"> 清除处理结果数据 </button> -->
+</div> {% endblock %}

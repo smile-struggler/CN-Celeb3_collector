@@ -1,0 +1,53 @@
+{% extends 'admin/master.html' %} {% block body %} <div>
+    <p> 输入BV号 : <input type="text" name="bvid" id="bvid">
+        <button style="width:100px;height:30px" onclick=load_video()>加载</button>
+    </p>
+    <div style="display: flex; flex-direction:column">
+        <div style="display: flex;flex-direction: row;">
+            <iframe style="flex: 0 0 800px" id="spkj" src="" scrolling="no" border="0" frameborder="no" framespacing="0"
+                allowfullscreen="true" width=800 height="600"
+                sandbox="allow-top-navigation allow-same-origin allow-forms allow-scripts"> </iframe>
+            <div style="flex: 0 0 600px; ">
+                <img id="speaker" style="width:auto;height:100%;max-height: 600px;" src="">
+            </div>
+
+        </div>
+        <div style="flex: 0 0 auto" id="count">
+        </div>
+        <div style="flex: 0 0 auto;display: flex; flex-direction: column;">
+            <canvas id="myCanvas" width="800" height="36" style="flex:0 0 auto"></canvas>
+            <p>
+            </p>
+            <canvas id="zoomCanvas" width="800" height="36" style="flex: 0 0 auto"></canvas>
+        </div>
+        <div style="flex: 0 0 auto">
+            <p id="user_id">采集人：</p>
+            <p id="speaker_id">speaker name：</p>
+            <p id="scene_id">场景：</p>
+            <button onclick="last_clip()"> 上一段 </button>
+            <button onclick="seek_to_clip()"> 播放标注段 </button>
+            <button onclick="next_clip_no_skip()"> 下一段 </button>
+            <button onclick="goto_current()"> 播放当前帧所在段</button>
+            <button onclick="back_clip()"> 播放第一个未标注段</button>
+            <p>
+            </p>
+            <button onclick="retain_current_clip_both()"
+                style="border:0px;width:100px;height:40px;background-color:green;color:white"> 接受当前段</button>
+            <button onclick="delete_current_clip()"
+                style="border:0px;width:100px;height:40px;background-color:red;color:white">拒绝当前段 </button>
+            <p>
+            </p>
+            <button style="width:200px;height:50px;background-color:bisqu" onclick="finish()"> 上传审核信息 </button>
+            <table width="150" border="1" cellspacing="0" id="tab1">
+                <!-- <table width="300" border="1" cellspacing="0" id="tab1" align="center"> -->
+                <caption>目标说话人完整语音时间表</caption>
+                <tr>
+                    <td>被选秒</td>
+                </tr>
+            </table>
+        </div>
+    </div>
+    <p>
+    </p>
+
+</div> {% endblock %}

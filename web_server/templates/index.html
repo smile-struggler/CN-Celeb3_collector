@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <title>数据收集-主页</title>
+    <link href="/static/css/common_style.css" rel="stylesheet" media="screen">
+</head>
+
+<body>
+    <div class="header">
+        <div class="header-logo"></div>
+        <div class="header-text">
+            <p style="font-size:32px;">语音和语言技术团队(CSLT)</p>
+            <p style="font-size:20px;">北京信息科学与技术国家研究中心 · 清华大学 BNRist · Tsinghua University</p>
+        </div>
+    </div>
+    <div class="content">
+        <div class="container">
+            <h1 id="welcome">Welcome, {{username}}!</h1>
+            <button onclick="logout()" style="flex:0 0 auto"> 退出登录 </button>
+            <p id="userinfo_collect"> </p>
+            <p id="userinfo_todo"> </p>
+            <p id="userinfo_annotated"> </p>
+            <div style="align-items:center;display:flex;flex-direction:column">
+                <button onclick="window.location.href='/collect'" style="flex:0 0 auto"> 采集数据 </button>
+                <p></p>
+                <button onclick="window.location.href='/annotate'" style="flex:0 0 auto"> 标注数据 </button>
+            </div>
+            <h2>详细统计信息如下：</h2>
+            <div style="align-items:center;display:flex;flex-direction:column">
+                <div
+                    style="max-width:1800px;min-width:1200px;display:flex;flex-direction:row;align-items:center;justify-content:space-around">
+                    <div style="flex: 0 0 auto">
+                        <!-- 已采集统计 -->
+                        <table border="1" cellspacing="0" id="collect_list" style="text-align:center">
+                            <tr>
+                                <th rowspan="2">姓名</th>
+                                <th colspan="2">已采集统计</th>
+                            </tr>
+                            <tr>
+                                <th>视频数量</th>
+                                <th>原始数据时长</th>
+                            </tr>
+                        </table>
+                    </div>
+                    <!-- 待标注统计 -->
+                    <div style="flex: 0 0 auto">
+                        <table border="1" cellspacing="0" id="marktodo_list" style="text-align:center">
+                            <tr>
+                                <th rowspan="2">姓名</th>
+                                <th colspan="2">待标注统计</th>
+                            </tr>
+                            <tr>
+                                <th>视频数量</th>
+                                <th>原始数据时长</th>
+                            </tr>
+                        </table>
+                    </div>
+                    <!-- 已标注统计 -->
+                    <div style="flex: 0 0 auto">
+                        <table border="1" cellspacing="0" id="marked_list" style="text-align:center">
+                            <tr>
+                                <th rowspan="2">姓名</th>
+                                <th colspan="2">已标注统计</th>
+                            </tr>
+                            <tr>
+                                <th>视频数量</th>
+                                <th>可用数据时长</th>
+                            </tr>
+                        </table>
+                    </div>
+                </div>
+                <p></p>
+                <p></p>
+                <!-- 场景统计 -->
+                <div style="flex: 0 0 auto">
+                    <table border="1" cellspacing="0" id="genre_list" style="text-align:center">
+                        <tr>
+                            <th rowspan="2">姓名</th>
+                            <th colspan="11">场景视频数统计</th>
+                            <th rowspan="2">场景数</th>
+                        </tr>
+                        <tr>
+                            <th>Advertisement</th>
+                            <th>Drama</th>
+                            <th>Entertainment</th>
+                            <th>Interview</th>
+                            <th>Live_Broadcast</th>
+                            <th>Movie</th>
+                            <th>Play</th>
+                            <th>Recitation</th>
+                            <th>Singing</th>
+                            <th>Speech</th>
+                            <th>Vlog</th>
+                        </tr>
+                    </table>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="footer">
+        <div class="footer-text">
+            <p> ©2022 清华大学信息国家研究中心语音和语言技术团队</p>
+            <p> 地址:北京市海淀区清华大学FIT楼1-303房间</p>
+            <p> 电话/传真:010-62796589 邮编:100084 E-mail:cslt@mail.tsinghua.edu.cn</p>
+        </div>
+    </div>
+    <script language="javascript" type="text/javascript" charset="UTF-8" src="static/js/jquery.js"></script>
+    <script language="javascript" type="text/javascript" charset="UTF-8" src="static/js/index.js"></script>
+    <script type="text/javascript">
+        // 把username存起来
+        username = "{{username}}"
+    </script>
+</body>
+
+</html>

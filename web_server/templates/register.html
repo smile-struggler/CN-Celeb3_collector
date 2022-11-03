@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <title>Register</title>
+    <link href="/static/css/common_style.css" rel="stylesheet" media="screen">
+    <link href="/static/css/login_style.css" rel="stylesheet" media="screen">
+</head>
+
+<body>
+    <div class="header">
+        <div class="header-logo"></div>
+        <div class="header-text">
+            <p style="font-size:32px;">语音和语言技术团队(CSLT)</p>
+            <p style="font-size:20px;">北京信息科学与技术国家研究中心 · 清华大学 BNRist · Tsinghua University</p>
+        </div>
+    </div>
+    <div class="content">
+        <div class="container">
+            <div id="bigBox" class="site-doc-icon site-doc-anim">
+                <h1>注册</h1>
+                <h4> 账户和密码由 2~10个 大小写英文字母、数字、下划线组成 </h4>
+                <div class="inputBox">
+                    <form action="/register" method="post">
+                        <div class="inputText">
+                            <input type="text" id="userid" name="userid" placeholder="请输入用户名/昵称" />
+                        </div>
+                        <div class="inputText">
+                            <input type="password" id="password" name="password" placeholder="请输入密码" />
+                        </div>
+                        <div class="inputText">
+                            <input type="password" id="password" name="password2" placeholder="请再次输入密码" />
+                        </div>
+                        <div class="inputText">
+                            <input type="text" id="telphone" name="telphone" placeholder="请输入手机号码 (确保真实，用于奖金发放)" />
+                        </div>
+                        <input type="submit" id="login" class="inputButton" value="注册">
+                        <input type="button" id="ret" class="inputButton" onclick="window.location.href='/login'"
+                            value="返回">
+                        <div style="color: white; margin-top:40px">{{message}}</div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="footer">
+        <div class="footer-text">
+            <p> ©2022 清华大学信息国家研究中心语音和语言技术团队</p>
+            <p> 地址:北京市海淀区清华大学FIT楼1-303房间</p>
+            <p> 电话/传真:010-62796589 邮编:100084 E-mail:cslt@mail.tsinghua.edu.cn</p>
+        </div>
+    </div>
+</body>
+
+</html>

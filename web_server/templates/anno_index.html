@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <title>标注数据-主页</title>
+    <link href="/static/css/common_style.css" rel="stylesheet" media="screen">
+</head>
+
+<body>
+    <div class="header">
+        <div class="header-logo"></div>
+        <div class="header-text">
+            <p style="font-size:32px;">语音和语言技术团队(CSLT)</p>
+            <p style="font-size:20px;">北京信息科学与技术国家研究中心 · 清华大学 BNRist · Tsinghua University</p>
+        </div>
+    </div>
+    <div class="content">
+        <div class="container">
+            <button onclick="window.location.href='/'" style="flex:0 0 auto"> 返回主页 </button>
+            <h1>{{username}}, 您需要审核的视频是这些：</h1>
+            <p id="userinfo_todo" style="flex:0 0 auto"> </p>
+            <p id="userinfo_annotated" style="flex:0 0 auto"> </p>
+            <!-- put things here -->
+            <div style="align-items:center; display:flex; flex-direction:column; width:100%">
+                <div style="flex: 1 0 auto; width:800px">
+                    <table width="800px" border="1" cellspacing="0" id="anntate_list" style="text-align:center">
+                        <tr>
+                            <th>BVid</th>
+                            <th>目标人</th>
+                            <th>标注状态</th>
+                            <th>标注入口</th>
+                            <th>修改信息</th>
+                            <th>删除</th>
+                        </tr>
+                    </table>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="footer">
+        <div class="footer-text">
+            <p> ©2022 清华大学信息国家研究中心语音和语言技术团队</p>
+            <p> 地址:北京市海淀区清华大学FIT楼1-303房间</p>
+            <p> 电话/传真:010-62796589 邮编:100084 E-mail:cslt@mail.tsinghua.edu.cn</p>
+        </div>
+    </div>
+    <script language="javascript" type="text/javascript" charset="UTF-8" src="static/js/jquery.js"></script>
+    <script language="javascript" type="text/javascript" charset="UTF-8" src="static/js/anno_index.js"></script>
+    <script type="text/javascript"> username = "{{username}}" </script>
+</body>
+
+</html>

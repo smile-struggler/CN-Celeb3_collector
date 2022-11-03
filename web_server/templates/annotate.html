@@ -1,0 +1,67 @@
+<!--
+ * @Author: sectum1919 1048186774@qq.com
+ * @Date: 2022-08-05 16:44:30
+ * @LastEditors: sectum1919 1048186774@qq.com
+ * @LastEditTime: 2022-08-17 17:35:02
+ * @Description: 
+ * 
+-->
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>标注数据</title>
+</head>
+
+<body>
+    <button style="width:200px;height:50px;background-color:bisque"
+        onclick="window.location.href='/annotate'">返回视频列表</button>  
+    <p>
+    </p>
+    <div>
+        <iframe id="spkj" src="" scrolling="no" border="0" frameborder="no" framespacing="0" allowfullscreen="true"
+            width=800 height="600" sandbox="allow-top-navigation allow-same-origin allow-forms allow-scripts"> </iframe>
+        <img id="speaker" style="position:absolute; left:830px;height:600px" src="">
+    </div>
+    <div id="count">
+    </div>
+    <div>
+        <canvas id="myCanvas" width="800" height="36" style="position:absolute; top:700px"></canvas>
+        <p>
+        </p>
+        <canvas id="zoomCanvas" width="800" height="36" style="position:absolute; top:750px"></canvas>
+    </div>
+    <p>
+    </p>
+    <div style="position:absolute; top:800px">
+        <button onclick="last_clip()"> 上一段 </button>
+        <button onclick="seek_to_clip()"> 播放标注段 </button>
+        <button onclick="next_clip_no_skip()"> 下一段 </button>
+        <button onclick="goto_current()"> 播放当前帧所在段</button>
+        <button onclick="back_clip()"> 播放第一个未标注段</button>
+        <p>
+        </p>
+        <button onclick="retain_current_clip_both()"
+            style="border:0px;width:100px;height:40px;background-color:green;color:white"> 接受当前段</button>
+        <button onclick="delete_current_clip()"
+            style="border:0px;width:100px;height:40px;background-color:red;color:white">拒绝当前段 </button>
+        <p>
+        </p>
+        <button style="width:200px;height:50px;background-color:bisqu" onclick="finish()"> 上传标注信息 </button>
+    </div>
+    <div style="margin-top:280px">
+        <b>图例：</b>
+        <button style="background-color: #848482; border: 0; height:30px; width:10px"></button> 待选择
+        <button style="background-color: #8DB600; border: 0; height:30px; width:10px"></button> 已接受
+        <button style="background-color: #b31b1b; border: 0; height:30px; width:10px"></button> 已删除
+        <button style="background-color: #f0e130; border: 0; height:30px; width:10px"></button> 已自动删除
+        <button style="background-color: #9966cc; border: 0; height:30px; width:10px"></button> 当前段
+    </div>
+    <script src="static/js/jquery.js"></script>
+    <script language="javascript" type="text/javascript" charset="UTF-8" src="static/js/annotate.js"></script>
+    <script type="text/javascript"> username = "{{username}}" </script>
+    <script type="text/javascript"> bvid = "{{bvid}}" </script>
+</body>
+
+</html>

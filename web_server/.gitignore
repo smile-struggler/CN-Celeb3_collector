@@ -1,0 +1,9 @@
+log/
+static/test.db
+__pycache__
+static/media
+*.pid
+push.sh
+pull.sh
+result/
+bak/
