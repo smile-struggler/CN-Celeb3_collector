@@ -1,0 +1,14 @@
+Flask==2.2.2
+moviepy==1.0.3
+mxnet_cu101==1.6.0.post0
+numpy==1.19.5
+opencv_contrib_python==4.6.0.66
+Pillow==9.2.0
+Requests==2.31.0
+scikit_learn==1.1.1
+six==1.15.0
+speechbrain==0.5.12
+tensorflow_gpu==2.3.0
+torch==1.11.0
+torchaudio==0.11.0
+tqdm==4.64.0
