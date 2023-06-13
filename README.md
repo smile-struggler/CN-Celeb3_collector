@@ -2,6 +2,10 @@
 
 采集者在安装项目中给出的**videospeed-master.zip**插件后，网页上先进行初步采集，经由后台数据处理后再完成最后的标注。详细过程请参考[CN-Celeb-AV: A Multi-Genre Audio-Visual Dataset for Person Recognition](https://arxiv.org/pdf/2305.16049.pdf)。
 
+该项目用户端使用的方法请于【链接: https://pan.baidu.com/s/1kcPl96Wb8HbUd_WdfaZdXA 提取码: 6t19】下载使用教程查看。
+
+管理端为网址加"/admin"，进入后根据内部提示操作即可。
+
 接下来将说明该项目的部署方式
 
 # 准备工作
