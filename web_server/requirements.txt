@@ -1,0 +1,8 @@
+Flask==0.12.2
+Flask_Admin==1.5.8
+Flask_APScheduler==1.12.2
+Flask_BasicAuth==0.2.0
+Flask_SQLAlchemy==2.5.1
+pandas==1.4.4
+Requests==2.31.0
+Werkzeug==0.12.2

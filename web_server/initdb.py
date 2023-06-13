@@ -33,7 +33,7 @@ def creat_table():
             PROCESSRES TEXT,             --预处理结果
             ANNOTATION TEXT,             --标注结果
             AUDIT      TEXT,             --审核结果
-            DELMARK    TEXT,             --删除结果
+            DELMARK    TEXT             --删除结果
             );
         """
     print(sql_creat_data_table)
